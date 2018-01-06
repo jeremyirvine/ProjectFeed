@@ -19,8 +19,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginSpinner: UIActivityIndicatorView!
     
     @IBOutlet weak var loginBtn: UIButton!
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         loginSpinner.isHidden = true
         loginSpinner.startAnimating()
         print("username: \(UserDefaults.standard.object(forKey: "username")), key: \(UserDefaults.standard.object(forKey: "key"))")
@@ -60,6 +78,7 @@ class ViewController: UIViewController {
 
     @IBAction func loginBtnPressed(_ sender: Any) {
         if(canLogin) {
+            self.view.endEditing(true)
             loginSpinner.isHidden = false
             usernameField.isHidden = true
             passwordField.isHidden = true
@@ -85,7 +104,7 @@ class ViewController: UIViewController {
                                     let json = data as! NSDictionary
                                     print(json["status"] as! String)
                                     if (json["status"] as! String == "success") {
-                                        UserDefaults.standard.set(json["instaKey"] as! String, forKey: "instaKey")
+                                        UserDefaults.standard.set(json["instaKey"] as! String, forKey: "insta-token")
                                         UserDefaults.standard.synchronize()
                                         self.performSegue(withIdentifier: "landingToMenu", sender: self)
                                     } else {

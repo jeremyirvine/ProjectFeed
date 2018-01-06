@@ -16,8 +16,9 @@
 		97F1B1BA1FFF174B00D65348 /* ProjectFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F1B1B91FFF174B00D65348 /* ProjectFeedUITests.swift */; };
 		97F1B1C81FFF1A4D00D65348 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F1B1C71FFF1A4D00D65348 /* Constants.swift */; };
 		97F1B1CA200020AB00D65348 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F1B1C9200020AB00D65348 /* MenuViewController.swift */; };
-		97F1B1D12000296B00D65348 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F1B1CC2000295B00D65348 /* Alamofire.framework */; };
-		97F1B1D22000296B00D65348 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97F1B1CC2000295B00D65348 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97F1B1D520007E7300D65348 /* AddMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F1B1D420007E7300D65348 /* AddMediaViewController.swift */; };
+		97F1B1D72000834300D65348 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F1B1D62000834200D65348 /* Alamofire.framework */; };
+		97F1B1D82000834300D65348 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97F1B1D62000834200D65348 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		97F1B1D32000296B00D65348 /* Embed Frameworks */ = {
+		97F1B1D92000834300D65348 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				97F1B1D22000296B00D65348 /* Alamofire.framework in Embed Frameworks */,
+				97F1B1D82000834300D65348 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +69,8 @@
 		97F1B1C71FFF1A4D00D65348 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		97F1B1C9200020AB00D65348 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		97F1B1CC2000295B00D65348 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		97F1B1D420007E7300D65348 /* AddMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMediaViewController.swift; sourceTree = "<group>"; };
+		97F1B1D62000834200D65348 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97F1B1D12000296B00D65348 /* Alamofire.framework in Frameworks */,
+				97F1B1D72000834300D65348 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +102,7 @@
 		97F1B18D1FFF174A00D65348 = {
 			isa = PBXGroup;
 			children = (
+				97F1B1D62000834200D65348 /* Alamofire.framework */,
 				97F1B1981FFF174A00D65348 /* ProjectFeed */,
 				97F1B1AD1FFF174B00D65348 /* ProjectFeedTests */,
 				97F1B1B81FFF174B00D65348 /* ProjectFeedUITests */,
@@ -128,6 +132,7 @@
 				97F1B1A21FFF174A00D65348 /* LaunchScreen.storyboard */,
 				97F1B1A51FFF174A00D65348 /* Info.plist */,
 				97F1B1C71FFF1A4D00D65348 /* Constants.swift */,
+				97F1B1D420007E7300D65348 /* AddMediaViewController.swift */,
 			);
 			path = ProjectFeed;
 			sourceTree = "<group>";
@@ -168,7 +173,7 @@
 				97F1B1921FFF174A00D65348 /* Sources */,
 				97F1B1931FFF174A00D65348 /* Frameworks */,
 				97F1B1941FFF174A00D65348 /* Resources */,
-				97F1B1D32000296B00D65348 /* Embed Frameworks */,
+				97F1B1D92000834300D65348 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +300,7 @@
 			files = (
 				97F1B1CA200020AB00D65348 /* MenuViewController.swift in Sources */,
 				97F1B19C1FFF174A00D65348 /* ViewController.swift in Sources */,
+				97F1B1D520007E7300D65348 /* AddMediaViewController.swift in Sources */,
 				97F1B19A1FFF174A00D65348 /* AppDelegate.swift in Sources */,
 				97F1B1C81FFF1A4D00D65348 /* Constants.swift in Sources */,
 			);
@@ -463,7 +469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZWNE9RGM92;
+				DEVELOPMENT_TEAM = P334YRNS8K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -471,7 +477,7 @@
 				INFOPLIST_FILE = ProjectFeed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bamboo-us.ProjectFeed";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bamboous.ProjectFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -483,7 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZWNE9RGM92;
+				DEVELOPMENT_TEAM = P334YRNS8K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -491,7 +497,7 @@
 				INFOPLIST_FILE = ProjectFeed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bamboo-us.ProjectFeed";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bamboous.ProjectFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
