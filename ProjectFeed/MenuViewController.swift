@@ -43,9 +43,9 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         InstagramLoginView.isHidden = false
-        if(UserDefaults.standard.object(forKey: "insta-token") as! String != "") {
+        if(UserDefaults.standard.object(forKey: "insta-token") as! String != "" || UserDefaults.standard.bool(forKey: "no-insta")) {
             // Ask user to login to instagram...
-            print("Token already present...")
+            print("Token already present or user has skipped this...")
             InstagramLoginView.isHidden = true
         } else {
             askInstaToken()

@@ -25,6 +25,12 @@ class AddMediaViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = fData[indexPath.row] as! NSDictionary
+        
+        print("Selected: ", data["name"] as! String, "[", data["id"] as! String, "]")
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -55,8 +61,10 @@ class AddMediaViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func facebookSearchBtnPressed(_ sender: Any) {
         print("Attempting Request...")
-        print("Request URL: https://graph.facebook.com/v2.11/search?q=\(facebookSearchField.text!)&type=page&access_token=1885818195082007%7Cml3-08MDaLy3ZfUqUh4THDg99Wo")
-        Alamofire.request("https://graph.facebook.com/v2.11/search?q=\(facebookSearchField.text!)&type=page&access_token=1885818195082007%7Cml3-08MDaLy3ZfUqUh4THDg99Wo").responseJSON { response in
+        var search = facebookSearchField.text!
+        search = search.replacingOccurrences(of: " ", with: "%20")
+        print("Request URL: https://graph.facebook.com/v2.11/search?q=\(search)&type=page&access_token=1885818195082007%7Cml3-08MDaLy3ZfUqUh4THDg99Wo")
+        Alamofire.request("https://graph.facebook.com/v2.11/search?q=\(search)&type=page&access_token=1885818195082007%7Cml3-08MDaLy3ZfUqUh4THDg99Wo").responseJSON { response in
             if let data = response.result.value {
                 let json = data as! NSDictionary
                 print("Got Data: ")
