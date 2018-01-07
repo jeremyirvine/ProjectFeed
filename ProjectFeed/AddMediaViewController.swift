@@ -12,6 +12,7 @@ import Alamofire
 class AddMediaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var fData: NSArray = []
+    var selectedId: String?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fData.count
@@ -27,7 +28,8 @@ class AddMediaViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = fData[indexPath.row] as! NSDictionary
-        
+        selectedId = data["id"] as! String
+        performSegue(withIdentifier: "searchToView", sender: self)
         print("Selected: ", data["name"] as! String, "[", data["id"] as! String, "]")
     }
     
@@ -55,6 +57,12 @@ class AddMediaViewController: UIViewController, UITableViewDelegate, UITableView
                 self.view.frame.origin.y += keyboardSize.height
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var newId = selectedId
+        let vc = segue.destination as! ViewMediaViewController
+        vc.selectedId = newId!
     }
     
     

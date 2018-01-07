@@ -19,6 +19,7 @@
 		97F1B1D520007E7300D65348 /* AddMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F1B1D420007E7300D65348 /* AddMediaViewController.swift */; };
 		97F1B1D72000834300D65348 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F1B1D62000834200D65348 /* Alamofire.framework */; };
 		97F1B1D82000834300D65348 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97F1B1D62000834200D65348 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97F1B1DB2001AA6100D65348 /* ViewMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F1B1DA2001AA6100D65348 /* ViewMediaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		97F1B1CC2000295B00D65348 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		97F1B1D420007E7300D65348 /* AddMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMediaViewController.swift; sourceTree = "<group>"; };
 		97F1B1D62000834200D65348 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		97F1B1DA2001AA6100D65348 /* ViewMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMediaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		97F1B1981FFF174A00D65348 /* ProjectFeed */ = {
 			isa = PBXGroup;
 			children = (
+				97F1B1DA2001AA6100D65348 /* ViewMediaViewController.swift */,
 				97F1B1C9200020AB00D65348 /* MenuViewController.swift */,
 				97F1B1991FFF174A00D65348 /* AppDelegate.swift */,
 				97F1B19B1FFF174A00D65348 /* ViewController.swift */,
@@ -303,6 +306,7 @@
 				97F1B1D520007E7300D65348 /* AddMediaViewController.swift in Sources */,
 				97F1B19A1FFF174A00D65348 /* AppDelegate.swift in Sources */,
 				97F1B1C81FFF1A4D00D65348 /* Constants.swift in Sources */,
+				97F1B1DB2001AA6100D65348 /* ViewMediaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

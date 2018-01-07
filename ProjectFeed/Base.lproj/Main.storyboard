@@ -238,11 +238,52 @@
                         <outlet property="facebookSearchField" destination="b9M-Px-jn7" id="P7f-SI-vk0"/>
                         <outlet property="facebookTableView" destination="Jdh-iR-J2v" id="zu0-9u-A2S"/>
                         <outlet property="instagramBtn" destination="Mdk-sR-xvs" id="2da-f7-pj0"/>
+                        <segue destination="ZDs-K7-A6Y" kind="show" identifier="searchToView" id="dbZ-JB-PHT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="III-XK-tyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2023.2" y="133.00492610837438"/>
+        </scene>
+        <!--View Media View Controller-->
+        <scene sceneID="af0-Re-IjZ">
+            <objects>
+                <viewController id="ZDs-K7-A6Y" customClass="ViewMediaViewController" customModule="ProjectFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A2J-iY-pRc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEm-PJ-f4q">
+                                <rect key="frame" x="319" y="44" width="40" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <state key="normal" title="▾"/>
+                                <connections>
+                                    <action selector="dismissBtnPressed:" destination="ZDs-K7-A6Y" eventType="touchUpInside" id="I6v-Sa-qV0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghj-nT-kYe">
+                                <rect key="frame" x="321" y="748" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="+"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KWb-DE-m2W">
+                                <rect key="frame" x="16" y="93" width="69" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="cif-eW-EXg"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissBtn" destination="PEm-PJ-f4q" id="0Gm-Bf-iCv"/>
+                        <outlet property="userImage" destination="KWb-DE-m2W" id="SEC-Q0-Sea"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HpW-xQ-sx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1973.5999999999999" y="1044.8275862068965"/>
         </scene>
     </scenes>
 </document>
