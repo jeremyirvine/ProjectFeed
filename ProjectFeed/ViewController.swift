@@ -42,17 +42,39 @@ class ViewController: UIViewController {
         loginSpinner.isHidden = true
         loginSpinner.startAnimating()
         print("username: \(UserDefaults.standard.object(forKey: "username")), key: \(UserDefaults.standard.object(forKey: "key"))")
+        var shouldCont = true
+        var errFacebook = false
+        var errInstagram = false
+        doLoginInit()
+//        Alamofire.request("https://graph.facebook.com/v2.11/57559012857?access_token=1885818195082007%7Cml3-08MDaLy3ZfUqUh4THDg99Wo&fields=id,name").validate().responseJSON { response in
+//            switch response.result {
+//                case .failure(let error):
+//                    let alert = UIAlertController(title: "Error", message: "Could not connect to social media, please try again later", preferredStyle: .alert)
+//                    self.present(alert, animated: true, completion: nil)
+//                    print("Facebook encountered an error:", error)
+//                    shouldCont = false
+//                    errFacebook = true
+//                case .success:
+//                    print("Connection to facebook verified")
+//                    self.doLoginInit()
+//            }
+//        }
+        
+    }
+    
+    func doLoginInit() {
         if(UserDefaults.standard.object(forKey: "username") == nil || UserDefaults.standard.object(forKey: "key") == nil) {
             // Not logged in...
             canLogin = true
         } else if (UserDefaults.standard.object(forKey: "username") != nil && UserDefaults.standard.object(forKey: "key") != nil) {
             // Logged in...
+            
             loginSpinner.isHidden = false
             usernameField.isHidden = true
             passwordField.isHidden = true
             loginBtn.isEnabled = false
             
-
+            
             let username = UserDefaults.standard.object(forKey: "username")!
             let key = UserDefaults.standard.object(forKey: "key")!
             Alamofire.request("https://bamboo-us.com/ProjectFeed/login.php?u=\(username)&k=\(key)").responseJSON { response in
